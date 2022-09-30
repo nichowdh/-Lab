@@ -8,14 +8,15 @@ public class Circle {
 		radius = 1.5f; // initializing the variables
 	}
 
-	Circle(float radius) { // constructor 2
+	public Circle(float radius) { // constructor 2
 		this.radius = radius;
 	}
 
-	float pi = 3.5f; // initializing the variable
+	float pi; // initializing the variable
 
-	Circle(float radius, float pi) { // constructor 3
+	public Circle(float radius, float pi) { // constructor 3
 		this.radius = radius; // defaulting the pi value
+		this.pi=3.5f;
 	}
 
 	float calculateCircleArea(float r) {
@@ -29,8 +30,8 @@ public class Circle {
 // main method
 	public static void main(String[] args) {
 		Circle c = new Circle();
-		c.calculateCircleArea(1.5f);
-		c.calculateCircumference(3.5f);
+		new Circle().calculateCircleArea(1.5f);
+		new Circle().calculateCircumference(3.5f);
 	}
 
 }

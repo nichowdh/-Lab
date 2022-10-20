@@ -1,0 +1,20 @@
+Lab session (20th oct 2022)
+Problem 1.
+Write a Java method to check whether every digit of a given integer
+is even. Return true if every digit is odd otherwise false?
+Problem 2.
+Banking Operations relate a class with customer private instance
+variables as accountNumber,accountName,accountBalance and
+create methods as
+1. create account => accnumber,accname,accbal
+2. setAmount=> add amount to accbal
+3. getAmount=>print accbal and name account
+4. withDrawAmount()=to withdraw amount from accBalance
+create a main class to use customer and create atleast two
+customers
+Problem 3.
+Program to create library book Management system
+to store and display book details in library where you can
+create two classes one is main another one is library, where you can
+create two methods as addBook,dispanseBook and
+bookId,bookName,bookAuthor as instance variables

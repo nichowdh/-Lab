@@ -10,9 +10,9 @@ public class Main { // main class
 		Movie obj = new Movie();
 		// value input
 		obj.set_name("Bramhastra");
-		obj.set_startTime(10.00);
-		obj.set_endTime(02.00);
-		obj.set_ticketPrice(130.00);
+		obj.set_startTime("10 AM");
+		obj.set_endTime("2 PM");
+		obj.set_ticketPrice(130.0);
 		// printing the values
 		System.out.println("Movie name: " + obj.get_name());
 		System.out.println("Movie Start Time: " + obj.get_startTime());

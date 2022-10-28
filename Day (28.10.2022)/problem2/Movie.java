@@ -2,19 +2,19 @@ package problem2;
 
 public class Movie { // class
 	// instance variables
-	String movieName;
-	double movieStartTime, movieEndTime, movieTicketPrice;
+	private String movieName, movieStartTime, movieEndTime;
+	private double movieTicketPrice;
 
 	// using getter method
 	public String get_name() {
 		return movieName;
 	}
 
-	public double get_startTime() {
+	public String get_startTime() {
 		return movieStartTime;
 	}
 
-	public double get_endTime() {
+	public String get_endTime() {
 		return movieEndTime;
 	}
 
@@ -27,11 +27,11 @@ public class Movie { // class
 		movieName = mn;
 	}
 
-	public void set_startTime(double st) {
+	public void set_startTime(String st) {
 		movieStartTime = st;
 	}
 
-	public void set_endTime(double et) {
+	public void set_endTime(String et) {
 		movieEndTime = et;
 	}
 

@@ -1,22 +1,34 @@
 import java.util.ArrayList;
 
-public class ListLoader { // main calss
-	ArrayList<Integer> a = new ArrayList<Integer>(); // array integer
+public class ListLoader implements Runnable { // class
+	int startNumber, lastNumber;
 
-	void loadList(Integer startNumber, Integer lastNumber) { // method loadList
-		for (int i = startNumber; i < lastNumber; i++) { // for loop
-			a.add(i);
-		}
+	ListLoader(int sn, int ln) { // parameterised constructor
+		this.startNumber = sn;
+		this.lastNumber = ln;
 	}
 
-	public static void main(String[] args) { // main method
-		// TODO Auto-generated method stub
-		ListLoader l = new ListLoader(); // object creation
-		int s_time = (int) System.currentTimeMillis();
-		l.loadList(1, 10000000); // passing the values
-		int e_time = (int) System.currentTimeMillis();
-		System.out.println("the time taken for the method to run: " + (e_time - s_time) + " ms ");
+	public void run() { // method of (loadlist)
+		ArrayList<Integer> a = new ArrayList<Integer>(); // array integer
+		for (Integer i = startNumber; i < lastNumber; i++) { // for loop
+			a.add(i);
+		}
+		for (int j : a) { // for loop
+			System.out.println(j);
+		}
 
+	}
+
+	public static void main(String[] args) throws InterruptedException { // main method
+		Runnable r = new ListLoader(0, 100); // object creatio of Runnable with value
+		Thread t = new Thread(r); // object of Thread Class
+		int a = (int) System.currentTimeMillis(); // time taken before executing
+		System.out.println("Response time before Executing LoadList Method: " + a);
+		t.start();
+		t.join();
+		int b = (int) System.currentTimeMillis();
+		System.out.println("Response time after Executing LoadList Method: " + b);
+		System.out.println("Response Time: " + (b - a) + " ms");
 	}
 
 }

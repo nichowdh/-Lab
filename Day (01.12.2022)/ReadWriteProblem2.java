@@ -1,3 +1,8 @@
+
+//create a java program to read n print the content to/from the file
+//Note: display two options 1 for store data 2 for print data,
+//if user press 1 then read the data from console and store it in file, 
+//if user press 2 print the data from the file
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Scanner;

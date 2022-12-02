@@ -1,3 +1,6 @@
+
+//Write a Java program to store text file content 
+//line by line into an array.
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 
@@ -5,7 +8,7 @@ public class Problem4 { // class
 
 	public static void main(String[] args) { // main method
 		try {
-			FileInputStream f = new FileInputStream("E:\\test1.txt"); // destination
+			FileInputStream f = new FileInputStream("D:\\test.txt"); // destination
 			byte arr[] = f.readAllBytes();
 			ByteArrayInputStream b = new ByteArrayInputStream(arr);
 			int i = 0;

@@ -16,7 +16,7 @@ public class BookUtil { // book util class
 			System.out.println("For book-" + i);
 			System.out.println("Enter bookID:");
 			Scanner scanBookID = new Scanner(System.in);
-			String bookID = scanBookID.nextLine();
+			int bookID = scanBookID.nextInt();
 
 			System.out.println("Enter title:");
 			Scanner scanTitle = new Scanner(System.in);
@@ -29,30 +29,11 @@ public class BookUtil { // book util class
 			obj.addBook(new Book(bookID, title, author));
 			obj.displayAll();
 
-			if (i != 4) { // condition for close scanner inputs
-				continue;
-			}
-
-			scanBookID.close();
-			scanTitle.close();
-			scanAuthor.close();
-
 		}
-
-		System.out.println("Enter title to search book: ");
-		String title = s.nextLine();
-		System.out.println("Searched by title");
-		obj.searchByTitle(title);
-
-		System.out.println("Enter author name to search book");
-		String author = s.nextLine();
-		System.out.println("Searched by author");
-		obj.searchByAuthor(author);
-		// display all books with details
-		System.out.println("Printing all books:");
 		obj.displayAll();
-		// close all inputs
-		s.close();
+		obj.searchByAuthor("Niladri"); // passing value
+		obj.searchByTitle("Java");
+
 	}
 
 }

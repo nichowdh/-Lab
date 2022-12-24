@@ -36,8 +36,14 @@ insert into Movie values
 (9, 'A03', 'Gone with the Wind', 'CB', 200),
 (10, 'A05', 'Carry on Doctor', 'LP', 100);
 # 2. Prove that entity integrity constraint is ensured by both the tables. (2 conditions to be checked).
+insert into Movies values (11, 'A07', 'John Wick', 'PU', 400);# this entity will not allow because Referential Integrity Constraints is not satisfy
+insert into Customer_1 values(null, 'Kia', 'Charlse', 'AD', 9542684);# this entity will not allow because Entity integrity constraints is not satisfy
 # 3. Prove that referential integrity constraint is ensured by both the tables.
+insert into Movie values ('11','A01','Harry Potter','LO',200);  # here cust_id 'A01' present in the Customer4 table(parent table)
+
 # 4. Prove that domain integrity constraint is ensured by the Movie table
+insert into Movie values ('12','A03','Gone Girl','DB',BB);   # this entity will not allow because data type of domain includes integer but we input a string
+
 # 5. Display the movie titles, whose price is greater than 100 but less than 200.
 select Title from Movie where price between 100 and 200;
 # 6. Display the cust_id who have seen movies having stars as either JC or TC or MC.

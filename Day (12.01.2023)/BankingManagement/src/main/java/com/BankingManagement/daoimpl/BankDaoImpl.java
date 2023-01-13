@@ -64,7 +64,6 @@ public class BankDaoImpl implements BankDao {// open account in db
 	}
 
 	public void depAccount() {// deposit to account in db
-		double bal = 0.0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Account Number:");
 		long acc = sc.nextLong();
@@ -75,17 +74,18 @@ public class BankDaoImpl implements BankDao {// open account in db
 		Bank b2 = session.get(Bank.class, acc);
 		System.out.println("Enter the amount you want to deposite: ");
 		double depo = sc.nextDouble();
-		bal = bal + depo;
+		double u_bal = b2.getBalance() + depo;
+		b2.setBalance(u_bal);
 		session.update(b2);
 		System.out.println("Updated Successfully...");
-		System.out.println("Previous balance was: " + bal);
-		System.out.println("Updated balance is: " + (bal + depo));
+		System.out.println("Previous balance was: " + b2.getBalance());
+		System.out.println("Updated balance is: " + u_bal);
 		t.commit();
 
 	}
 
 	public void withAccount() {// withdrawal from db
-		double bal = 0.0;
+
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Account Number:");
 		long acc = sc.nextLong();
@@ -96,14 +96,12 @@ public class BankDaoImpl implements BankDao {// open account in db
 		Bank b3 = session.get(Bank.class, acc);
 		System.out.println("Enter the amount you want to Withdraw: ");
 		double with = sc.nextDouble();
-		if (bal >= with) {
-			bal = bal - with;
-			System.out.println("Balance after withdrawal: " + bal);
-		} else {
-			System.out.println("Your balance is less than " + with + "\tTransaction failed...!!");
-		}
+		double u_bal = b3.getBalance() - with;
+		b3.setBalance(with);
 		session.update(b3);
-		System.out.println("Updated Successfully...");
+		System.out.println("Withdrawal Successfully...");
+		System.out.println("Previous balance was: " + b3.getBalance());
+		System.out.println("Updated balance is: " + u_bal);
 		t.commit();
 
 	}
@@ -115,11 +113,13 @@ public class BankDaoImpl implements BankDao {// open account in db
 		Session session = BankUtil.getSessionFactory().openSession();
 		Transaction t = session.beginTransaction();
 		Bank b4 = session.get(Bank.class, acc);
-		System.out.println("Enter Account PIN:");
+		System.out.println("Enter Current PIN:");
 		int pin = sc.nextInt();
-		b4.setPin(pin);
+		System.out.println("Enter New PIN:");
+		int pin1 = sc.nextInt();
+		b4.setPin(pin1);
 		session.update(b4);
-		System.out.println("Updated Successfully...");
+		System.out.println("PIN Change Successfully...");
 		t.commit();
 
 	}

@@ -1,6 +1,6 @@
 package com.Spring.entity;
 
-public class Bank_Details {
+public class Bank_Details { // class
 	private String b_name;
 	private String ename;
 	private Account acc;

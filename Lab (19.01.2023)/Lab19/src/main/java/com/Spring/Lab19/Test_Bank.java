@@ -7,9 +7,9 @@ import org.springframework.core.io.Resource;
 
 import com.Spring.entity.Bank_Details;
 
-public class Test_Bank {
+public class Test_Bank { //// test class of Bank_Details
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // main method
 		Resource res = new ClassPathResource("Context.xml");
 		BeanFactory b = new XmlBeanFactory(res);
 		Bank_Details bk = (Bank_Details) b.getBean("bd");

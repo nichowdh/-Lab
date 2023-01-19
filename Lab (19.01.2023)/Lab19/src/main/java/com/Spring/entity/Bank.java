@@ -3,7 +3,7 @@ package com.Spring.entity;
 import java.util.Iterator;
 import java.util.List;
 
-public class Bank {
+public class Bank { // class
 	private int id;
 	private String sname;
 	private double bal;
@@ -17,7 +17,7 @@ public class Bank {
 		this.acctype = acctype;
 	}
 
-	public void display() {
+	public void display() { // method
 		System.out.println(id + " " + sname + " " + bal);
 		System.out.println("Account Types Are: ");
 		Iterator<String> itr = acctype.iterator();

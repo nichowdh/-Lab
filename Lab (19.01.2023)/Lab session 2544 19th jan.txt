@@ -1,0 +1,8 @@
+Lab session --- 19/01/2023
+
+1. Create a spring application with Constructor Dependency 
+   Injection & apply :
+
+a.. constructor injection with collection
+b.. constructor injection with Dependent object
+c.. constructor injection with Double based value

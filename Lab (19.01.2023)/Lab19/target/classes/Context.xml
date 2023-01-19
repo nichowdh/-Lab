@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/data/jpa
+ https://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+ 
+
+ 
+ <bean id="bank" class="com.Spring.entity.Bank">
+ <constructor-arg  value="10"/>
+ <constructor-arg  value="Niladri Chowdhury"/>
+ <constructor-arg  value="5000.50"/>
+ <constructor-arg>
+ <list>
+ <value>Savings Account</value>
+ <value>Current Account</value>
+ <value>RD Account</value>
+ <value>FD Account</value>
+ </list>
+ </constructor-arg>
+ </bean>
+ 
+ <bean id="acc" class="com.Spring.entity.Account">
+ <constructor-arg  value="Savings"/>
+ <constructor-arg  value="8000.50"/>
+ 
+
+ </bean>
+ 
+ <bean id="bd" class="com.Spring.entity.Bank_Details">
+ <constructor-arg value="SBI"/>
+ <constructor-arg  value="Niladri Chowdhury"/>
+ <constructor-arg><ref bean="acc"/></constructor-arg>
+ </bean>
+
+ 
+ </beans>
